@@ -1,49 +1,30 @@
 package com.jsb.sampleapplication.Data;
 
 
-import android.util.Log;
+import android.content.Context;
 
-import com.jsb.sampleapplication.Model.ITunes;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-
-public class Repo implements Callback<ITunes> {
+public class Repo {
 
     private static Repo mRepo = null;
-    private ResponseCallback mContext;
+    private Context mContext;
 
-    private Repo(ResponseCallback context) {
+    RetrofitClient mNetworkClient;
+
+    private Repo(Context context) {
         mContext= context;
+        mNetworkClient = new RetrofitClient();
     }
 
-    public static Repo getInstance(ResponseCallback context) {
+    public static Repo getInstance(Context context) {
         if (mRepo == null) {
             mRepo = new Repo(context);
         }
         return mRepo;
     }
 
-    public void loadMovies(String id) {
-        Call<ITunes> response =  RetrofitClient.getRetrofitClient().create(APIService.class).loadMovies(id);
-        response.enqueue(this);
+    public void loadMovies(String id, ResponseCallback callback) {
+        mNetworkClient.loadMovies(id, callback);
     }
 
-    @Override
-    public void onResponse(Call<ITunes> call, Response<ITunes> response) {
-        if(response.isSuccessful()) {
-            Log.e("JAY", "response success");
-            mContext.onSuccess(response);
-        } else {
-            Log.e("JAY", "response failure");
-            mContext.onFailure(new Throwable("Response Failure"));
-        }
-    }
 
-    @Override
-    public void onFailure(Call<ITunes> call, Throwable t) {
-        Log.e("JAY", "failed response");
-        mContext.onFailure(t);
-    }
 }

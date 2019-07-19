@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements ResponseCallback 
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-        Repo.getInstance(this).loadMovies("17120");
+        Repo.getInstance(getApplicationContext()).loadMovies("17120", this);
     }
 
     @Override
