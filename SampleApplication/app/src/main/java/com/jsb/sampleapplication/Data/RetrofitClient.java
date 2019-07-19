@@ -1,18 +1,20 @@
-package com.jsb.sampleapplication;
+package com.jsb.sampleapplication.Data;
+
+import android.util.Log;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class Controller  {
+public class RetrofitClient {
 
-    static final String BASE_URL = "https://itunes.apple.com/";
+    private static Retrofit mClient = null;
+
+    private static final String BASE_URL = "https://itunes.apple.com/";
     //"https://itunes.apple.com/lookup?amgVideoId=17120"
 
-    private APIService apiService = null;
-
-    public void start() {
+    private static Retrofit getClient() {
 
         HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
         // set your desired log level
@@ -23,22 +25,21 @@ public class Controller  {
         // add logging as last interceptor
         httpClient.addInterceptor(logging);  // <-- this is the important line!
 
-//        Gson gson = new GsonBuilder()
-//                .setLenient()
-//                .create();
 
-        Retrofit retrofit = new Retrofit.Builder()
+        return  new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .client(httpClient.build())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
-
-         apiService =  retrofit.create(APIService.class);
-
     }
 
-    public APIService getAPIService () {
-        return apiService;
+    public static Retrofit getRetrofitClient() {
+        if (mClient == null) {
+            mClient = getClient();
+        }
+        Log.e("JAY", "getRetrofitClient");
+        return mClient;
     }
+
 
 }

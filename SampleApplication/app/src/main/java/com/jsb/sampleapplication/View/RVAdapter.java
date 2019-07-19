@@ -1,10 +1,9 @@
-package com.jsb.sampleapplication;
+package com.jsb.sampleapplication.View;
 
 import android.app.Activity;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
-import android.view.ActionMode;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +11,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.jsb.sampleapplication.Model.ITunes;
+import com.jsb.sampleapplication.R;
 import com.squareup.picasso.Picasso;
 
 public class RVAdapter extends RecyclerView.Adapter<RVAdapter.RVDataObjectHolder>{

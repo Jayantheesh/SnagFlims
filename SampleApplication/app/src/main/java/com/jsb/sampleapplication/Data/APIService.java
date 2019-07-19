@@ -1,4 +1,6 @@
-package com.jsb.sampleapplication;
+package com.jsb.sampleapplication.Data;
+
+import com.jsb.sampleapplication.Model.ITunes;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

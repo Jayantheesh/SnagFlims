@@ -1,4 +1,4 @@
-package com.jsb.sampleapplication;
+package com.jsb.sampleapplication.Model;
 
 import java.util.List;
 
