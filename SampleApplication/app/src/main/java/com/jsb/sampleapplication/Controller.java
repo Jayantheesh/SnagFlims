@@ -15,6 +15,7 @@ public class Controller implements Callback<ITunes> {
     static final String BASE_URL = "https://itunes.apple.com/";
     //"https://itunes.apple.com/lookup?amgVideoId=17120"
 
+    private APIService apiService = null;
 
     public void start(String id) {
 
@@ -37,11 +38,15 @@ public class Controller implements Callback<ITunes> {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
-        APIService apiService =  retrofit.create(APIService.class);
-        Call<ITunes> call = apiService.loadMovies(id);
+         apiService =  retrofit.create(APIService.class);
+        //Call<ITunes> call = apiService.loadMovies(id);
 
-        call.enqueue(this);
+        //call.enqueue(this);
 
+    }
+
+    public APIService getAPIService () {
+        return apiService;
     }
 
     @Override
