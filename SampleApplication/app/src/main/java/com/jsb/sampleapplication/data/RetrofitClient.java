@@ -1,8 +1,8 @@
-package com.jsb.sampleapplication.Data;
+package com.jsb.sampleapplication.data;
 
 import android.util.Log;
 
-import com.jsb.sampleapplication.Model.ITunes;
+import com.jsb.sampleapplication.model.ITunes;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;

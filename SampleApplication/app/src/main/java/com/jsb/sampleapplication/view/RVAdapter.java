@@ -1,4 +1,4 @@
-package com.jsb.sampleapplication.View;
+package com.jsb.sampleapplication.view;
 
 import android.app.Activity;
 import android.content.Context;
@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.jsb.sampleapplication.Model.ITunes;
+import com.jsb.sampleapplication.model.ITunes;
 import com.jsb.sampleapplication.R;
 import com.squareup.picasso.Picasso;
 

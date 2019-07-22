@@ -1,4 +1,4 @@
-package com.jsb.sampleapplication.Data;
+package com.jsb.sampleapplication.data;
 
 
 import android.content.Context;

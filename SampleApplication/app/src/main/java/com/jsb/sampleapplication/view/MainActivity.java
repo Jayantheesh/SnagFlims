@@ -1,4 +1,4 @@
-package com.jsb.sampleapplication.View;
+package com.jsb.sampleapplication.view;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -6,9 +6,9 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.Toast;
 
-import com.jsb.sampleapplication.Data.Repo;
-import com.jsb.sampleapplication.Data.ResponseCallback;
-import com.jsb.sampleapplication.Model.ITunes;
+import com.jsb.sampleapplication.data.Repo;
+import com.jsb.sampleapplication.data.ResponseCallback;
+import com.jsb.sampleapplication.model.ITunes;
 import com.jsb.sampleapplication.R;
 
 import retrofit2.Response;

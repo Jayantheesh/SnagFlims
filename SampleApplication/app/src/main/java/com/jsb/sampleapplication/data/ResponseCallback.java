@@ -1,6 +1,6 @@
-package com.jsb.sampleapplication.Data;
+package com.jsb.sampleapplication.data;
 
-import com.jsb.sampleapplication.Model.ITunes;
+import com.jsb.sampleapplication.model.ITunes;
 
 import retrofit2.Response;
 

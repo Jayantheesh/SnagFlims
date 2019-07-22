@@ -1,4 +1,4 @@
-package com.jsb.sampleapplication.Model;
+package com.jsb.sampleapplication.model;
 
 public class Result {
 
