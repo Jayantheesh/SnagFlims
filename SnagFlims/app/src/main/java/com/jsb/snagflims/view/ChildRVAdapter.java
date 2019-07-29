@@ -39,7 +39,7 @@ public class ChildRVAdapter extends RecyclerView.Adapter<ChildRVAdapter.ChildRVD
         Log.e("Jay" , imageUrl);
         String newString = "https" + imageUrl.substring(imageUrl.indexOf(":"));
         Log.e("Jay" , newString);
-        Picasso.with(mContext).load(newString).into(childRVDataHolder.image);
+        Picasso.get().load(newString).into(childRVDataHolder.image);
     }
 
     @Override

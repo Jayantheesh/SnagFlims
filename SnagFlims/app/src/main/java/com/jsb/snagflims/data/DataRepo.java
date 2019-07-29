@@ -20,7 +20,11 @@ public class DataRepo {
         return mDatarepo;
     }
 
-    public void getMovies(String query, ResponseCallback cb) {
+    public boolean getMovies(String query, ResponseCallback cb) {
+        if (query == null || cb == null) {
+            return false;
+        }
         mNetClient.getMovies(query, cb);
+        return true;
     }
 }
